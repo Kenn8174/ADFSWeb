@@ -15,12 +15,6 @@ namespace ADFSWeb.Areas.Identity
         public void Configure(IWebHostBuilder builder)
         {
             builder.ConfigureServices((context, services) => {
-                services.AddDbContext<ADFSWebContext>(options =>
-                    options.UseSqlServer(
-                        context.Configuration.GetConnectionString("ADFSWebContextConnection")));
-
-                services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                    .AddEntityFrameworkStores<ADFSWebContext>();
             });
         }
     }
